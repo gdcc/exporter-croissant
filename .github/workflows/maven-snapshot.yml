@@ -1,15 +1,8 @@
-name: Croissant Snapshot to Maven Central Repository
+name: Snapshot to Maven Central Repository
 on:
     push:
         branches:
             - main
-        paths:
-            - "croissant/**"
-    pull_request:
-        branches:
-            - main
-        paths:
-            - "croissant/**"
 jobs:
     publish:
         runs-on: ubuntu-latest
@@ -34,10 +27,10 @@ jobs:
                   key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
                   restore-keys: ${{ runner.os }}-m2
             - name: Build, test, verify and publish snapshot
-              run: mvn -f croissant -B verify -Djdk.version=${{ matrix.java }}
+              run: mvn -B verify -Djdk.version=${{ matrix.java }}
             - name: Publish snapshot
               if: ${{ matrix.java == '17' }}
-              run: mvn -e -X -f croissant deploy -DskipAnalysis -DskipUT -DskipIT -Djdk.version=${{ matrix.java }}
+              run: mvn -e -X deploy -DskipAnalysis -DskipUT -DskipIT -Djdk.version=${{ matrix.java }}
               env:
                   MAVEN_USERNAME: ${{ secrets.DATAVERSEBOT_SONATYPE_USERNAME }}
                   MAVEN_PASSWORD: ${{ secrets.DATAVERSEBOT_SONATYPE_TOKEN }}
