@@ -9,7 +9,7 @@
   <name>Croissant Exporter for Dataverse</name>
   <description>Croissant is a high-level format for machine learning datasets.</description>
 
-  <url>https://github.com/gdcc/dataverse-exporters/tree/croissant/croissant</url>
+  <url>https://github.com/gdcc/exporter-croissant</url>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
