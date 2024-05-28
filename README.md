@@ -105,6 +105,13 @@ As a convenience, you can run `mvn test` and then `update-expected.sh` after mak
 spotless::apply
 ```
 
+## To check the pom.xml file
+ 
+
+```
+mvn pomchecker:check-maven-central
+```
+
 ### To build the Croissant jar
 
 ```    

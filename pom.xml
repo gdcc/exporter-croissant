@@ -48,6 +48,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <pomchecker-maven-plugin.version>1.7.0</pomchecker-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -110,6 +111,11 @@
           <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
           <autoReleaseAfterClose>true</autoReleaseAfterClose>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.kordamp.maven</groupId>
+        <artifactId>pomchecker-maven-plugin</artifactId>
+        <version>${pomchecker-maven-plugin.version}</version>
       </plugin>
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
