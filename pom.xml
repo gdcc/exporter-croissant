@@ -123,8 +123,8 @@
         <version>2.36.0</version>
         <configuration>
           <java>
-            <importOrder />
-            <removeUnusedImports />
+            <importOrder></importOrder>
+            <removeUnusedImports></removeUnusedImports>
             <googleJavaFormat>
               <version>1.15.0</version>
               <style>AOSP</style>
@@ -135,7 +135,7 @@
             <includes>
               <include>pom.xml</include>
             </includes>
-            <sortPom />
+            <sortPom></sortPom>
           </pom>
         </configuration>
       </plugin>
