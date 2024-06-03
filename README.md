@@ -174,7 +174,7 @@ A pyDataverse implementation is underway at https://github.com/Dans-labs/pyDatav
 - `datePublished` is YYYY-MM-DD HH:MM:SS. Should be YYYY-MM-DD.
 - Under `distribution`:
     - For files, for `@id`, the database id (e.g. `f26148`) is used instead of the filename (e.g. `README.md`) for path plus filename (e.g. `doc/README.md`).
-    - `field` is repeated over and over. See #1 and #2.
+    - `field` is repeated over and over. See https://github.com/gdcc/exporter-croissant/issues/1 and https://github.com/gdcc/exporter-croissant/pull/2
 - Missing: `funder`
 - Missing: `includedInDataCatalog`
 - `name` inserts underscores for spaces (e.g. "Max Schema.org" becomes "Max_Schema.org")
