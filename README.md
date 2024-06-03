@@ -152,7 +152,6 @@ Same as above but use a JVM option in domain.xml such as the example below.
 ### Differences from Kaggle
 
 - I see an `encodingFormat` of `text/comma-separated-values`. Kind of curious about that since I think `text/csv` is more the MIME type that's on https://www.iana.org/assignments/media-types/media-types.xhtml and https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types . See https://github.com/IQSS/dataverse/issues/4943#issuecomment-2145333830
-- Another thing that sticks out is that I see all of the `field`s have a `dataType` of `sc:Integer`. But nearly all of the columns (excluding `quality` and `Id`) are `sc:Float`. On the Kaggle side, we have a column type of "Id" and so if that's set on a column, we set the `dataType` to `sc:Text` since Ids can often be non-numerical. Just a minor difference there, though, so nothing alarming to me personally.
 
 ### Differences from pyDataverse
 

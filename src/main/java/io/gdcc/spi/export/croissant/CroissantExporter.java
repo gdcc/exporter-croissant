@@ -282,14 +282,19 @@ public class CroissantExporter implements Exporter {
                         String variableDescription = dataVariableObject.getString("label", "");
                         String variableFormatType =
                                 dataVariableObject.getString("variableFormatType");
+                        String variableIntervalType =
+                                dataVariableObject.getString("variableIntervalType");
                         String dataType = null;
+                        /**
+                         * There are only two variableFormatType types on the Dataverse side:
+                         * CHARACTER and NUMERIC. (See VariableType in DataVariable.java.)
+                         */
                         switch (variableFormatType) {
                             case "CHARACTER":
                                 dataType = "sc:Text";
                                 break;
                             case "NUMERIC":
-                                // TODO: Integer? What about other numeric types?
-                                dataType = "sc:Integer";
+                                dataType = getNumericType(variableIntervalType);
                                 break;
                             default:
                                 break;
@@ -399,5 +404,17 @@ public class CroissantExporter implements Exporter {
         sb.append("url = {").append(pidAsUrl).append("}");
         sb.append("}");
         return sb.toString();
+    }
+
+    private String getNumericType(String variableIntervalType) {
+        /**
+         * According to DataVariable.java in Dataverse, the four possibilities are: discrete, contin
+         * (continuous), nominal, and dichotomous.
+         */
+        return switch (variableIntervalType) {
+            case "discrete" -> "sc:Integer";
+            case "contin" -> "sc:Float";
+            default -> "sc:Text";
+        };
     }
 }

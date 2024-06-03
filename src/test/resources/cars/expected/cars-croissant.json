@@ -167,7 +167,7 @@
                     "@type": "cr:Field",
                     "name": "headroom",
                     "description": "Headroom (in.)",
-                    "dataType": "sc:Integer",
+                    "dataType": "sc:Float",
                     "source": {
                         "@id": "7",
                         "fileObject": {
@@ -239,7 +239,7 @@
                     "@type": "cr:Field",
                     "name": "gear_ratio",
                     "description": "Gear Ratio",
-                    "dataType": "sc:Integer",
+                    "dataType": "sc:Float",
                     "source": {
                         "@id": "8",
                         "fileObject": {

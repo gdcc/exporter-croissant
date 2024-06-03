@@ -301,6 +301,13 @@ public class CroissantExporterTest {
         assertEquals(prettyPrint(expected), prettyPrint(outputStreamMax.toString()));
     }
 
+    /*
+        The data in stata13-auto.dta looks something like this:
+        make          price mpg rep78 headroom trunk weight length turn displacement gear_ratio foreign
+        "AMC Concord" 4099  22  3     2.5      11    2930   186    40   121          3.58       0
+        "AMC Pacer"   4749  17  3     3.0      11    3350   173    40   258          2.53       0
+        "AMC Spirit"  3799  22        3.0      12    2640   168    35   121          3.08       0
+    */
     @Test
     public void testExportDatasetCars() throws Exception {
         exporter.exportDataset(dataProviderCars, outputStreamCars);
