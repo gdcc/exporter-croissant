@@ -5,6 +5,10 @@
 [Croissant]: https://github.com/mlcommons/croissant
 [Croissant writeup]: https://dataverse-guide--10533.org.readthedocs.build/en/10533/installation/advanced.html#croissant-croissant
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
 ## Known issues
 
 ### The "version" field triggers a validation warning.
