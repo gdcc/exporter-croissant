@@ -193,6 +193,8 @@ public class CroissantExporter implements Exporter {
             int fileCounter = 0;
             for (JsonValue jsonValue : datasetFileDetails) {
 
+                JsonObjectBuilder recordSetContent = Json.createObjectBuilder();
+                recordSetContent.add("@type", "cr:RecordSet");
                 JsonObject fileDetails = jsonValue.asJsonObject();
                 /**
                  * When there is an originalFileName, it means that the file has gone through ingest
@@ -306,9 +308,9 @@ public class CroissantExporter implements Exporter {
                                                                 "fileObject",
                                                                 Json.createObjectBuilder()
                                                                         .add("@id", fileId))));
-                        fieldSetObject.add("field", fieldSetArray);
-                        recordSet.add(fieldSetObject);
                     }
+                    recordSetContent.add("field", fieldSetArray);
+                    recordSet.add(recordSetContent);
                     fileIndex++;
                 }
                 fileCounter++;

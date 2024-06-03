@@ -126,12 +126,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "price",
@@ -143,12 +138,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "mpg",
@@ -160,12 +150,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "rep78",
@@ -177,12 +162,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "headroom",
@@ -194,12 +174,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "trunk",
@@ -211,12 +186,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "weight",
@@ -228,12 +198,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "length",
@@ -245,12 +210,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "turn",
@@ -262,12 +222,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "displacement",
@@ -279,12 +234,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "gear_ratio",
@@ -296,12 +246,7 @@
                             "@id": "data/stata13-auto.dta"
                         }
                     }
-                }
-            ]
-        },
-        {
-            "@type": "cr:RecordSet",
-            "field": [
+                },
                 {
                     "@type": "cr:Field",
                     "name": "foreign",
