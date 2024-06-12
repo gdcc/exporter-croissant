@@ -183,7 +183,7 @@ A pyDataverse implementation is underway at https://github.com/Dans-labs/pyDatav
 - `name` inserts underscores for spaces (e.g. "Max Schema.org" becomes "Max_Schema.org")
 - Missing: `publisher`. Expected is something like `{"@type": "Organization","name": "Root"}`.
 - Missing: `spatialCoverage`. Expected is an array with something like `"Cambridge, MA, United States, Harvard Square"`.
-- Missing: `temportalCoverage`. Expected is an array with something like `"2023-01-01/2023-12-31"`.
+- Missing: `temporalCoverage`. Expected is an array with something like `"2023-01-01/2023-12-31"`.
 - `version` shows the version of Dataverse (`6.2 build develop-28a9d44.0`) rather than the version of the dataset.
 - `dateCreated` is present.
 
