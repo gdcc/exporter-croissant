@@ -1,9 +1,21 @@
 # Croissant Exporter for Dataverse
 
-[Croissant][] is a high-level format for machine learning datasets. See the [Croissant writeup] in the guides for how this format is used in Dataverse and how to enable it.
+[Croissant][] is a high-level format for machine learning datasets. See the [Croissant writeup] in the Dataverse guides for how this format is used in Dataverse and how to enable it.
 
 [Croissant]: https://github.com/mlcommons/croissant
-[Croissant writeup]: https://dataverse-guide--10533.org.readthedocs.build/en/10533/installation/advanced.html#croissant-croissant
+[Croissant writeup]: https://preview.guides.gdcc.io/en/develop/admin/discoverability.html#schema-org-json-ld-croissant-metadata
+
+## Installation
+
+Please note: the Croissant exporter works best with Dataverse 6.2 and higher (where it updates the content of `<head>` as described in the [guides](https://preview.guides.gdcc.io/en/develop/admin/discoverability.html#schema-org-json-ld-croissant-metadata)) but can be used with 6.0 and higher (to get the export functionality).
+
+1. First, download the Croissant jar file from Maven Central. Most likely, you will want the latest released version, which you can find at <https://repo1.maven.org/maven2/io/gdcc/export/croissant/>. (Unreleased/snapshot versions are [available](https://s01.oss.sonatype.org/content/groups/staging/io/gdcc/export/croissant/) but not recommended for production use.)
+
+1. Place the jar in the directory you specified for the [dataverse.spi.exporters.directory](https://guides.dataverse.org/en/latest/installation/config.html#dataverse-spi-exporters-directory) setting.
+
+1. Restart Payara.
+
+1. On published datasets, click "Metadata" and then "Export Metadata". You should see a "Croissant" option in the drop down.
 
 ## Changelog
 
@@ -56,7 +68,7 @@ Google's [guidelines on structured data][] don't indicate any size limit but we 
 
 ### Can summary statistics go into Croissant?
 
-No, but we opened https://github.com/mlcommons/croissant/issues/640 about this. See also "potential areas of work" in the [Croissant Task Force Minutes] for 2024-04-01. 
+No, but we opened https://github.com/mlcommons/croissant/issues/640 about this. See also "potential areas of work" in the [Croissant Task Force Minutes] for 2024-04-01.
 
 ## Developer documentation
 
@@ -71,7 +83,7 @@ You can find the Croissant [spec] on the [Croissant] website. Consider joining t
 
 ### To run tests
 
-```    
+```
 mvn test
 ```
 
@@ -110,7 +122,7 @@ mvn spotless::apply
 ```
 
 ## To check the pom.xml file
- 
+
 
 ```
 mvn pomchecker:check-maven-central
@@ -118,7 +130,7 @@ mvn pomchecker:check-maven-central
 
 ### To build the Croissant jar
 
-```    
+```
 mvn package
 ```
 
