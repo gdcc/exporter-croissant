@@ -252,7 +252,7 @@ public class CroissantExporterTest {
 
     @Test
     public void testGetMediaType() {
-        assertEquals("application/json", exporter.getMediaType());
+        assertEquals("application/ld+json; profile=\"http://mlcommons.org/croissant/1.0\"", exporter.getMediaType());
     }
 
     @Test
