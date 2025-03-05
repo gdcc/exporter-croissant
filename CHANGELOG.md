@@ -1,3 +1,8 @@
+0.1.3
+=====
+
+- Changed media type from `application/json` to `application/ld+json; profile="http://mlcommons.org/croissant/1.0"` to be more specific. See https://github.com/gdcc/exporter-croissant/issues/6 and https://github.com/gdcc/exporter-croissant/pull/7
+
 0.1.2
 =====
 

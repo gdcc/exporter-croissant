@@ -14,7 +14,6 @@ import jakarta.json.JsonObject;
 import jakarta.json.JsonObjectBuilder;
 import jakarta.json.JsonReader;
 import jakarta.json.JsonValue;
-import jakarta.ws.rs.core.MediaType;
 
 import java.io.OutputStream;
 import java.io.StringReader;
@@ -63,12 +62,15 @@ public class CroissantExporter implements Exporter {
     }
 
     /**
-     * Defines the mime type of the exported format - used when metadata is downloaded, i.e. to
-     * trigger an appropriate viewer in the user's browser.
+     * Defines the mime type of the exported format - used when metadata is
+     * downloaded, i.e. to trigger an appropriate viewer in the user's browser.
+     *
+     * We are asking for the media type to be added to the Croissant spec in
+     * https://github.com/mlcommons/croissant/issues/792 .
      */
     @Override
     public String getMediaType() {
-        return MediaType.APPLICATION_JSON;
+        return "application/ld+json; profile=\"http://mlcommons.org/croissant/1.0\"";
     }
 
     /**
