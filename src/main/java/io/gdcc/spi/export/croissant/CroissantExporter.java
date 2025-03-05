@@ -14,7 +14,6 @@ import jakarta.json.JsonObject;
 import jakarta.json.JsonObjectBuilder;
 import jakarta.json.JsonReader;
 import jakarta.json.JsonValue;
-import jakarta.ws.rs.core.MediaType;
 
 import java.io.OutputStream;
 import java.io.StringReader;
