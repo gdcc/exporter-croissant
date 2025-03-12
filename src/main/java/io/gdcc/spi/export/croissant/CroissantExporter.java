@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 /** https://github.com/mlcommons/croissant */
 @AutoService(Exporter.class)
 public class CroissantExporter implements Exporter {
@@ -75,6 +77,7 @@ public class CroissantExporter implements Exporter {
      * This method is called by Dataverse when metadata for a given dataset in this format is
      * requested.
      */
+    @SuppressWarnings("deprecation")
     @Override
     public void exportDataset(ExportDataProvider dataProvider, OutputStream outputStream)
             throws ExportException {
@@ -144,7 +147,7 @@ public class CroissantExporter implements Exporter {
 
             JsonObject datasetORE = dataProvider.getDatasetORE();
             JsonObject describes = datasetORE.getJsonObject("ore:describes");
-            job.add("name", describes.getString("title"));
+            job.add("name", StringEscapeUtils.escapeHtml4(describes.getString("title")));
             job.add("url", describes.getJsonString("@id"));
             JsonObject datasetSchemaDotOrg = dataProvider.getDatasetSchemaDotOrg();
             job.add("creator", datasetSchemaDotOrg.getJsonArray("creator"));
@@ -205,9 +208,9 @@ public class CroissantExporter implements Exporter {
                  * in this? And would we duplicate all the cr:RecordSet entries (columns) with each
                  * additional format? Probably not as it would be the same.
                  */
-                String filename = fileDetails.getString("originalFileName", null);
+                String filename = StringEscapeUtils.escapeHtml4(fileDetails.getString("originalFileName", null));
                 if (filename == null) {
-                    filename = fileDetails.getString("filename");
+                    filename = StringEscapeUtils.escapeHtml4(fileDetails.getString("filename"));
                 }
                 String fileFormat = fileDetails.getString("originalFileFormat", null);
                 if (fileFormat == null) {
@@ -230,7 +233,7 @@ public class CroissantExporter implements Exporter {
                 String checksumType = checksum.getString("type").toLowerCase();
                 String checksumValue = checksum.getString("value");
                 String contentUrl = oreFiles.getJsonObject(fileCounter).getString("schema:sameAs");
-                String description = fileDetails.getString("description", "");
+                String description = StringEscapeUtils.escapeHtml4(fileDetails.getString("description", ""));
                 /**
                  * See https://github.com/mlcommons/croissant/issues/639 for discussion with the
                  * Croissant spec leads on what to put in
@@ -278,8 +281,8 @@ public class CroissantExporter implements Exporter {
                         JsonObject dataVariableObject = dataVariableValue.asJsonObject();
                         // TODO: should this be an integer?
                         Integer variableId = dataVariableObject.getInt("id");
-                        String variableName = dataVariableObject.getString("name");
-                        String variableDescription = dataVariableObject.getString("label", "");
+                        String variableName = StringEscapeUtils.escapeHtml4(dataVariableObject.getString("name"));
+                        String variableDescription = StringEscapeUtils.escapeHtml4(dataVariableObject.getString("label", ""));
                         String variableFormatType =
                                 dataVariableObject.getString("variableFormatType");
                         String variableIntervalType =
@@ -339,7 +342,7 @@ public class CroissantExporter implements Exporter {
             }
 
             // TODO: Do we need DataCite XML?
-            String dataCiteXml = dataProvider.getDataCiteXml();
+            //String dataCiteXml = dataProvider.getDataCiteXml();
 
             // Write the output format to the output stream.
             outputStream.write(job.build().toString().getBytes("UTF8"));
