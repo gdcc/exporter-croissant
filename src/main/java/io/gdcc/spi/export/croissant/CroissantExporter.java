@@ -77,7 +77,6 @@ public class CroissantExporter implements Exporter {
      * This method is called by Dataverse when metadata for a given dataset in this format is
      * requested.
      */
-    @SuppressWarnings("deprecation")
     @Override
     public void exportDataset(ExportDataProvider dataProvider, OutputStream outputStream)
             throws ExportException {
