@@ -149,6 +149,8 @@ public class CroissantExporter implements Exporter {
             job.add("name", StringEscapeUtils.escapeHtml4(describes.getString("title")));
             job.add("url", describes.getJsonString("@id"));
             JsonObject datasetSchemaDotOrg = dataProvider.getDatasetSchemaDotOrg();
+            // We don't escape DatasetSchemaDotOrg fields like creator, description, etc. because
+            // they are already escaped.
             job.add("creator", datasetSchemaDotOrg.getJsonArray("creator"));
             job.add("description", datasetSchemaDotOrg.getJsonString("description"));
             job.add("keywords", datasetSchemaDotOrg.getJsonArray("keywords"));
@@ -247,6 +249,7 @@ public class CroissantExporter implements Exporter {
                  *     https://github.com/IQSS/dataverse/issues/10523
                  */
                 String fileId = filename;
+                // We don't escape directory label because many characters aren't allowed anyway
                 String directoryLabel =
                         oreFiles.getJsonObject(fileCounter)
                                 .getString("dvcore:directoryLabel", null);

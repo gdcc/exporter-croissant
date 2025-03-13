@@ -1,7 +1,7 @@
 0.1.3
 =====
 
-- Strings in the following fields are escaped using HTML entities: title, description, filename, file format, variable name, variable description. See https://github.com/gdcc/exporter-croissant/pull/8
+- Strings in the following fields are escaped using HTML entities: title, filename, file description, file format, variable name, variable description. See https://github.com/gdcc/exporter-croissant/pull/8
 
 0.1.2
 =====
