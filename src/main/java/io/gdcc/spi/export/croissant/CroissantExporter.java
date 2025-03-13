@@ -342,7 +342,7 @@ public class CroissantExporter implements Exporter {
             }
 
             // TODO: Do we need DataCite XML?
-            //String dataCiteXml = dataProvider.getDataCiteXml();
+            String dataCiteXml = dataProvider.getDataCiteXml();
 
             // Write the output format to the output stream.
             outputStream.write(job.build().toString().getBytes("UTF8"));
