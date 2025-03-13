@@ -16,13 +16,13 @@ import jakarta.json.JsonReader;
 import jakarta.json.JsonValue;
 import jakarta.ws.rs.core.MediaType;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import org.apache.commons.text.StringEscapeUtils;
 
 /** https://github.com/mlcommons/croissant */
 @AutoService(Exporter.class)
@@ -208,7 +208,9 @@ public class CroissantExporter implements Exporter {
                  * in this? And would we duplicate all the cr:RecordSet entries (columns) with each
                  * additional format? Probably not as it would be the same.
                  */
-                String filename = StringEscapeUtils.escapeHtml4(fileDetails.getString("originalFileName", null));
+                String filename =
+                        StringEscapeUtils.escapeHtml4(
+                                fileDetails.getString("originalFileName", null));
                 if (filename == null) {
                     filename = StringEscapeUtils.escapeHtml4(fileDetails.getString("filename"));
                 }
@@ -233,7 +235,8 @@ public class CroissantExporter implements Exporter {
                 String checksumType = checksum.getString("type").toLowerCase();
                 String checksumValue = checksum.getString("value");
                 String contentUrl = oreFiles.getJsonObject(fileCounter).getString("schema:sameAs");
-                String description = StringEscapeUtils.escapeHtml4(fileDetails.getString("description", ""));
+                String description =
+                        StringEscapeUtils.escapeHtml4(fileDetails.getString("description", ""));
                 /**
                  * See https://github.com/mlcommons/croissant/issues/639 for discussion with the
                  * Croissant spec leads on what to put in
@@ -281,8 +284,11 @@ public class CroissantExporter implements Exporter {
                         JsonObject dataVariableObject = dataVariableValue.asJsonObject();
                         // TODO: should this be an integer?
                         Integer variableId = dataVariableObject.getInt("id");
-                        String variableName = StringEscapeUtils.escapeHtml4(dataVariableObject.getString("name"));
-                        String variableDescription = StringEscapeUtils.escapeHtml4(dataVariableObject.getString("label", ""));
+                        String variableName =
+                                StringEscapeUtils.escapeHtml4(dataVariableObject.getString("name"));
+                        String variableDescription =
+                                StringEscapeUtils.escapeHtml4(
+                                        dataVariableObject.getString("label", ""));
                         String variableFormatType =
                                 dataVariableObject.getString("variableFormatType");
                         String variableIntervalType =
