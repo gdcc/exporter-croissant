@@ -39,6 +39,8 @@ public class CroissantExporterTest {
     static ExportDataProvider dataProviderMax;
     static OutputStream outputStreamCars;
     static ExportDataProvider dataProviderCars;
+    static OutputStream outputStreamJunk;
+    static ExportDataProvider dataProviderJunk;
 
     @BeforeAll
     public static void setUp() {
@@ -225,6 +227,67 @@ public class CroissantExporterTest {
                         }
                     }
                 };
+
+        outputStreamJunk = new ByteArrayOutputStream();
+        dataProviderJunk =
+                new ExportDataProvider() {
+                    @Override
+                    public JsonObject getDatasetJson() {
+                        String pathToJsonFile = "src/test/resources/junk/in/datasetJson.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readObject();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public JsonObject getDatasetORE() {
+                        String pathToJsonFile = "src/test/resources/junk/in/datasetORE.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readObject();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public JsonArray getDatasetFileDetails() {
+                        String pathToJsonFile =
+                                "src/test/resources/junk/in/datasetFileDetails.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readArray();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public JsonObject getDatasetSchemaDotOrg() {
+                        String pathToJsonFile =
+                                "src/test/resources/junk/in/datasetSchemaDotOrg.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readObject();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public String getDataCiteXml() {
+                        try {
+                            return Files.readString(
+                                    Paths.get("src/test/resources/junk/in/dataCiteXml.xml"),
+                                    StandardCharsets.UTF_8);
+                        } catch (IOException ex) {
+                            return null;
+                        }
+                    }
+                };
     }
 
     @Test
@@ -319,6 +382,19 @@ public class CroissantExporterTest {
                         StandardCharsets.UTF_8);
         JSONAssert.assertEquals(expected, actual, true);
         assertEquals(prettyPrint(expected), prettyPrint(outputStreamCars.toString()));
+    }
+
+    @Test
+    public void testExportDatasetJunk() throws Exception {
+        exporter.exportDataset(dataProviderJunk, outputStreamJunk);
+        String actual = outputStreamJunk.toString();
+        writeCroissantFile(actual, "junk");
+        String expected =
+                Files.readString(
+                        Paths.get("src/test/resources/junk/expected/junk-croissant.json"),
+                        StandardCharsets.UTF_8);
+        JSONAssert.assertEquals(expected, actual, true);
+        assertEquals(prettyPrint(expected), prettyPrint(outputStreamJunk.toString()));
     }
 
     private void writeCroissantFile(String actual, String name) throws IOException {
