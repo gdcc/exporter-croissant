@@ -1,3 +1,8 @@
+0.1.4
+=====
+
+- Switch to parent pom. See https://github.com/gdcc/exporter-croissant/issues/5
+
 0.1.3
 =====
 
