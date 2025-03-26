@@ -1,11 +1,9 @@
 package io.gdcc.spi.export.croissant;
 
 import com.google.auto.service.AutoService;
-
 import io.gdcc.spi.export.ExportDataProvider;
 import io.gdcc.spi.export.ExportException;
 import io.gdcc.spi.export.Exporter;
-
 import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonArrayBuilder;
@@ -15,14 +13,12 @@ import jakarta.json.JsonObjectBuilder;
 import jakarta.json.JsonReader;
 import jakarta.json.JsonValue;
 import jakarta.ws.rs.core.MediaType;
-
-import org.apache.commons.text.StringEscapeUtils;
-
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import org.apache.commons.text.StringEscapeUtils;
 
 /** https://github.com/mlcommons/croissant */
 @AutoService(Exporter.class)
