@@ -1,6 +1,7 @@
 0.1.4
 =====
 
+- Handle drafts. See https://github.com/gdcc/exporter-croissant/pull/14
 - Switch to parent pom. See https://github.com/gdcc/exporter-croissant/issues/5
 - Tweaked spotless (code formatting) config. See https://github.com/gdcc/exporter-croissant/pull/12
 
