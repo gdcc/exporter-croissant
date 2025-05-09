@@ -151,7 +151,10 @@ public class CroissantExporter implements Exporter {
             job.add("description", datasetSchemaDotOrg.getJsonString("description"));
             job.add("keywords", datasetSchemaDotOrg.getJsonArray("keywords"));
             job.add("license", datasetSchemaDotOrg.getString("license"));
-            job.add("datePublished", datasetSchemaDotOrg.getString("datePublished"));
+            String datePublished = datasetSchemaDotOrg.getString("datePublished", null);
+            if (datePublished != null) {
+                job.add("datePublished", datasetSchemaDotOrg.getString("datePublished"));
+            }
             job.add("dateModified", datasetSchemaDotOrg.getString("dateModified"));
             job.add(
                     "includedInDataCatalog",
@@ -388,7 +391,11 @@ public class CroissantExporter implements Exporter {
         String identifier = datasetJson.getString("identifier");
 
         JsonObject oreDescribes = datasetORE.getJsonObject("ore:describes");
-        String publicationYear = oreDescribes.getString("schema:datePublished").substring(0, 4);
+        String publicationYear = null;
+        String publicationDate = oreDescribes.getString("schema:datePublished", null);
+        if (publicationDate != null) {
+            publicationYear = publicationDate.substring(0, 4);
+        }
 
         JsonArray creatorArray = datasetSchemaDotOrg.getJsonArray("creator");
         List<String> creators = new ArrayList<>();
@@ -403,11 +410,17 @@ public class CroissantExporter implements Exporter {
         String pidAsUrl = oreDescribes.getString("@id");
 
         StringBuilder sb = new StringBuilder();
-        sb.append("@data{").append(identifier).append("_").append(publicationYear).append(",");
+        if (publicationYear != null) {
+            sb.append("@data{").append(identifier).append("_").append(publicationYear).append(",");
+        } else {
+            sb.append("@data{").append(identifier).append(",");
+        }
         sb.append("author = {").append(creatorsFormatted).append("},");
         sb.append("publisher = {").append(publisher).append("},");
         sb.append("title = {").append(title).append("},");
-        sb.append("year = {").append(publicationYear).append("},");
+        if (publicationYear != null) {
+            sb.append("year = {").append(publicationYear).append("},");
+        }
         sb.append("url = {").append(pidAsUrl).append("}");
         sb.append("}");
         return sb.toString();
