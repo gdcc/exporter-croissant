@@ -48,7 +48,7 @@
     "@type": "sc:Dataset",
     "conformsTo": "http://mlcommons.org/croissant/1.0",
     "name": "Cars",
-    "url": "https://doi.org/10.5072/FK2/6ZUDGC",
+    "url": "https://doi.org/10.5072/FK2/CY7BWA",
     "creator": [
         {
             "@type": "Person",
@@ -66,8 +66,8 @@
         "Other"
     ],
     "license": "http://creativecommons.org/publicdomain/zero/1.0",
-    "datePublished": "2024-03-20",
-    "dateModified": "2024-03-20",
+    "datePublished": "2025-05-16",
+    "dateModified": "2025-05-16",
     "includedInDataCatalog": {
         "@type": "DataCatalog",
         "name": "Root",
@@ -78,7 +78,7 @@
         "name": "Root"
     },
     "version": "1.0",
-    "citeAs": "@data{FK2/6ZUDGC_2024,author = {Durbin, Philip},publisher = {Root},title = {Cars},year = {2024},url = {https://doi.org/10.5072/FK2/6ZUDGC}}",
+    "citeAs": "@data{FK2/CY7BWA_2025,author = {Durbin, Philip},publisher = {Root},title = {Cars},year = {2025},url = {https://doi.org/10.5072/FK2/CY7BWA}}",
     "distribution": [
         {
             "@type": "cr:FileObject",
@@ -88,17 +88,7 @@
             "md5": "d84985e94dde671f318076bd7a137f15",
             "contentSize": "15",
             "description": "",
-            "contentUrl": "http://localhost:8080/api/access/datafile/4"
-        },
-        {
-            "@type": "cr:FileObject",
-            "@id": "doc/README.md",
-            "name": "README.md",
-            "encodingFormat": "text/markdown",
-            "md5": "a2e484d07ee5590cc32182dc2c6ccc83",
-            "contentSize": "28",
-            "description": "",
-            "contentUrl": "http://localhost:8080/api/access/datafile/5"
+            "contentUrl": "http://localhost:8080/api/access/datafile/7"
         },
         {
             "@type": "cr:FileObject",
@@ -108,7 +98,17 @@
             "md5": "7b1201ce6b469796837a835377338c5a",
             "contentSize": "6443",
             "description": "",
-            "contentUrl": "http://localhost:8080/api/access/datafile/6?format=original"
+            "contentUrl": "http://localhost:8080/api/access/datafile/9?format=original"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "doc/README.md",
+            "name": "README.md",
+            "encodingFormat": "text/markdown",
+            "md5": "a2e484d07ee5590cc32182dc2c6ccc83",
+            "contentSize": "28",
+            "description": "",
+            "contentUrl": "http://localhost:8080/api/access/datafile/8"
         }
     ],
     "recordSet": [
@@ -121,7 +121,7 @@
                     "description": "Make and Model",
                     "dataType": "sc:Text",
                     "source": {
-                        "@id": "11",
+                        "@id": "2",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -151,7 +151,7 @@
                     "description": "Mileage (mpg)",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "6",
+                        "@id": "3",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -166,7 +166,7 @@
                     "description": "Repair Record 1978",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "4",
+                        "@id": "12",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -181,7 +181,7 @@
                     "description": "Headroom (in.)",
                     "dataType": "sc:Float",
                     "source": {
-                        "@id": "7",
+                        "@id": "1",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -196,7 +196,7 @@
                     "description": "Trunk space (cu. ft.)",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "9",
+                        "@id": "7",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -211,7 +211,7 @@
                     "description": "Weight (lbs.)",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "10",
+                        "@id": "4",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -226,7 +226,7 @@
                     "description": "Length (in.)",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "3",
+                        "@id": "8",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -241,7 +241,7 @@
                     "description": "Turn Circle (ft.) ",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "2",
+                        "@id": "9",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -256,7 +256,7 @@
                     "description": "Displacement (cu. in.)",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "1",
+                        "@id": "10",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -271,7 +271,7 @@
                     "description": "Gear Ratio",
                     "dataType": "sc:Float",
                     "source": {
-                        "@id": "8",
+                        "@id": "6",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },
@@ -286,7 +286,7 @@
                     "description": "Car type",
                     "dataType": "sc:Integer",
                     "source": {
-                        "@id": "12",
+                        "@id": "11",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
                         },

@@ -1,13 +1,13 @@
 [
     {
-        "id": 4,
+        "id": 7,
         "persistentId": "",
         "filename": "compute.py",
         "contentType": "text/x-python",
         "friendlyType": "Python Source Code",
         "filesize": 15,
         "description": "",
-        "storageIdentifier": "local://18e5c2b4bbb-3e5d7cdd36eb",
+        "storageIdentifier": "local://196d9f154f7-8cadf34ee905",
         "rootDataFileId": -1,
         "md5": "d84985e94dde671f318076bd7a137f15",
         "checksum": {
@@ -15,47 +15,22 @@
             "value": "d84985e94dde671f318076bd7a137f15"
         },
         "tabularData": false,
-        "creationDate": "2024-03-20",
-        "publicationDate": "2024-03-20",
+        "creationDate": "2025-05-16",
+        "publicationDate": "2025-05-16",
         "fileAccessRequest": true,
         "restricted": false,
         "fileMetadataId": 1,
-        "varGroups": [
-        ]
+        "varGroups": []
     },
     {
-        "id": 5,
-        "persistentId": "",
-        "filename": "README.md",
-        "contentType": "text/markdown",
-        "friendlyType": "Markdown Text",
-        "filesize": 28,
-        "description": "",
-        "storageIdentifier": "local://18e5c2b4e7f-215de2f460f1",
-        "rootDataFileId": -1,
-        "md5": "a2e484d07ee5590cc32182dc2c6ccc83",
-        "checksum": {
-            "type": "MD5",
-            "value": "a2e484d07ee5590cc32182dc2c6ccc83"
-        },
-        "tabularData": false,
-        "creationDate": "2024-03-20",
-        "publicationDate": "2024-03-20",
-        "fileAccessRequest": true,
-        "restricted": false,
-        "fileMetadataId": 2,
-        "varGroups": [
-        ]
-    },
-    {
-        "id": 6,
+        "id": 9,
         "persistentId": "",
         "filename": "stata13-auto.tab",
         "contentType": "text/tab-separated-values",
         "friendlyType": "Tab-Delimited",
         "filesize": 4026,
         "description": "",
-        "storageIdentifier": "local://18e5c2b505c-9712a34b0fe9",
+        "storageIdentifier": "local://196d9f15719-2270bfca2b48",
         "originalFileFormat": "application/x-stata-13",
         "originalFormatLabel": "Stata 13 Binary",
         "originalFileSize": 6443,
@@ -68,8 +43,8 @@
             "value": "7b1201ce6b469796837a835377338c5a"
         },
         "tabularData": true,
-        "creationDate": "2024-03-20",
-        "publicationDate": "2024-03-20",
+        "creationDate": "2025-05-16",
+        "publicationDate": "2025-05-16",
         "fileAccessRequest": true,
         "restricted": false,
         "fileMetadataId": 3,
@@ -80,7 +55,7 @@
                 "UNF": "UNF:6:RPd9EWHSZwqUvRZuKTJMqg==",
                 "dataVariables": [
                     {
-                        "id": 11,
+                        "id": 2,
                         "name": "make",
                         "label": "Make and Model",
                         "weighted": false,
@@ -89,8 +64,7 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 0,
                         "UNF": "UNF:6:Oo4vwiL8ffhSECOcjsKk2g==",
-                        "variableMetadata": [
-                        ]
+                        "variableMetadata": []
                     },
                     {
                         "id": 5,
@@ -102,21 +76,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 1,
                         "UNF": "UNF:6:rvfkkdA36AaCSqCQciybfA==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "mean": "6165.256756756757",
                             "min": "3291.0",
-                            "stdev": "2949.4958847689186",
-                            "vald": "74.0",
-                            "invd": "0.0",
                             "medn": "5006.5",
+                            "mean": "6165.256756756757",
+                            "max": "15906.0",
+                            "vald": "74.0",
                             "mode": ".",
-                            "max": "15906.0"
+                            "stdev": "2949.4958847689186",
+                            "invd": "0.0"
                         }
                     },
                     {
-                        "id": 6,
+                        "id": 3,
                         "name": "mpg",
                         "label": "Mileage (mpg)",
                         "weighted": false,
@@ -125,21 +98,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 2,
                         "UNF": "UNF:6:vVr3w8CgeZq1KpDfJQudOg==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
                             "max": "41.0",
-                            "medn": "20.0",
-                            "invd": "0.0",
-                            "min": "12.0",
                             "vald": "74.0",
+                            "medn": "20.0",
+                            "min": "12.0",
+                            "stdev": "5.785503209735141",
                             "mean": "21.2972972972973",
-                            "mode": ".",
-                            "stdev": "5.785503209735141"
+                            "invd": "0.0",
+                            "mode": "."
                         }
                     },
                     {
-                        "id": 4,
+                        "id": 12,
                         "name": "rep78",
                         "label": "Repair Record 1978",
                         "weighted": false,
@@ -148,21 +120,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 3,
                         "UNF": "UNF:6:gbFI98swTWNhAjCRyi2cdA==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "vald": "69.0",
-                            "mean": "3.4057971014492754",
                             "stdev": "0.989932270109041",
                             "mode": ".",
                             "min": "1.0",
-                            "invd": "5.0",
+                            "max": "5.0",
                             "medn": "3.0",
-                            "max": "5.0"
+                            "mean": "3.4057971014492754",
+                            "vald": "69.0",
+                            "invd": "5.0"
                         }
                     },
                     {
-                        "id": 7,
+                        "id": 1,
                         "name": "headroom",
                         "label": "Headroom (in.)",
                         "weighted": false,
@@ -172,21 +143,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 4,
                         "UNF": "UNF:6:g4Pl3T0Oz2e/OKJ64WiTnA==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "min": "1.5",
-                            "mode": ".",
                             "mean": "2.993243243243243",
-                            "invd": "0.0",
-                            "medn": "3.0",
-                            "stdev": "0.845994766828771",
+                            "mode": ".",
                             "vald": "74.0",
+                            "invd": "0.0",
+                            "stdev": "0.845994766828771",
+                            "min": "1.5",
+                            "medn": "3.0",
                             "max": "5.0"
                         }
                     },
                     {
-                        "id": 9,
+                        "id": 7,
                         "name": "trunk",
                         "label": "Trunk space (cu. ft.)",
                         "weighted": false,
@@ -195,21 +165,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 5,
                         "UNF": "UNF:6:iab0POsE3By7dQfgX/TY4g==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
+                            "vald": "74.0",
+                            "mode": ".",
+                            "mean": "13.756756756756756",
+                            "max": "23.0",
+                            "min": "5.0",
                             "medn": "14.0",
                             "invd": "0.0",
-                            "mode": ".",
-                            "vald": "74.0",
-                            "stdev": "4.277404189173201",
-                            "min": "5.0",
-                            "mean": "13.756756756756756",
-                            "max": "23.0"
+                            "stdev": "4.277404189173201"
                         }
                     },
                     {
-                        "id": 10,
+                        "id": 4,
                         "name": "weight",
                         "label": "Weight (lbs.)",
                         "weighted": false,
@@ -218,21 +187,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 6,
                         "UNF": "UNF:6:cdoTdfUNeYWHHFEBCDxg+w==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "medn": "3190.0",
-                            "mode": ".",
                             "invd": "0.0",
-                            "vald": "74.0",
-                            "mean": "3019.459459459459",
-                            "stdev": "777.1935671373664",
                             "min": "1760.0",
-                            "max": "4840.0"
+                            "vald": "74.0",
+                            "max": "4840.0",
+                            "stdev": "777.1935671373664",
+                            "mean": "3019.459459459459",
+                            "mode": ".",
+                            "medn": "3190.0"
                         }
                     },
                     {
-                        "id": 3,
+                        "id": 8,
                         "name": "length",
                         "label": "Length (in.)",
                         "weighted": false,
@@ -241,21 +209,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 7,
                         "UNF": "UNF:6:8z1rjwhqBN4meYIiKI4P1A==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "max": "233.0",
                             "mode": ".",
-                            "invd": "0.0",
-                            "mean": "187.93243243243245",
-                            "medn": "192.5",
                             "vald": "74.0",
-                            "min": "142.0",
-                            "stdev": "22.266339902021585"
+                            "invd": "0.0",
+                            "stdev": "22.266339902021585",
+                            "max": "233.0",
+                            "medn": "192.5",
+                            "mean": "187.93243243243245",
+                            "min": "142.0"
                         }
                     },
                     {
-                        "id": 2,
+                        "id": 9,
                         "name": "turn",
                         "label": "Turn Circle (ft.) ",
                         "weighted": false,
@@ -264,21 +231,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 8,
                         "UNF": "UNF:6:QxhjrrNtVz4qA8RulQ2MuQ==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "medn": "40.0",
-                            "vald": "74.0",
-                            "mode": ".",
-                            "invd": "0.0",
                             "stdev": "4.399353727233908",
-                            "mean": "39.648648648648646",
+                            "vald": "74.0",
+                            "max": "51.0",
                             "min": "31.0",
-                            "max": "51.0"
+                            "medn": "40.0",
+                            "mean": "39.648648648648646",
+                            "invd": "0.0",
+                            "mode": "."
                         }
                     },
                     {
-                        "id": 1,
+                        "id": 10,
                         "name": "displacement",
                         "label": "Displacement (cu. in.)",
                         "weighted": false,
@@ -287,21 +253,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 9,
                         "UNF": "UNF:6:ftk+RAQpTCT1/y6G/rLWfA==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "mode": ".",
-                            "medn": "196.0",
                             "stdev": "91.83721896440396",
-                            "vald": "74.0",
+                            "invd": "0.0",
                             "min": "79.0",
+                            "medn": "196.0",
+                            "mode": ".",
+                            "vald": "74.0",
                             "mean": "197.2972972972973",
-                            "max": "425.0",
-                            "invd": "0.0"
+                            "max": "425.0"
                         }
                     },
                     {
-                        "id": 8,
+                        "id": 6,
                         "name": "gear_ratio",
                         "label": "Gear Ratio",
                         "weighted": false,
@@ -311,21 +276,20 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 10,
                         "UNF": "UNF:6:qjnY/qbx26FTepoPqRZ6lw==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "invd": "0.0",
-                            "min": "2.190000057220459",
+                            "medn": "2.9550000429153442",
                             "stdev": "0.45628709670763035",
-                            "vald": "74.0",
+                            "mean": "3.0148648667979883",
+                            "min": "2.190000057220459",
                             "max": "3.890000104904175",
                             "mode": ".",
-                            "mean": "3.0148648667979883",
-                            "medn": "2.9550000429153442"
+                            "vald": "74.0",
+                            "invd": "0.0"
                         }
                     },
                     {
-                        "id": 12,
+                        "id": 11,
                         "name": "foreign",
                         "label": "Car type",
                         "weighted": false,
@@ -334,37 +298,58 @@
                         "isOrderedCategorical": false,
                         "fileOrder": 11,
                         "UNF": "UNF:6:nbjzgh3wfAFqKpaoFnHalA==",
-                        "variableMetadata": [
-                        ],
+                        "variableMetadata": [],
                         "summaryStatistics": {
-                            "mean": "0.2972972972972975",
+                            "max": "1.0",
                             "invd": "0.0",
                             "mode": ".",
-                            "stdev": "0.46018845840901884",
                             "medn": "0.0",
-                            "vald": "74.0",
+                            "stdev": "0.46018845840901884",
                             "min": "0.0",
-                            "max": "1.0"
+                            "mean": "0.2972972972972975",
+                            "vald": "74.0"
                         },
                         "variableCategories": [
-                            {
-                                "label": "Foreign",
-                                "value": "1",
-                                "isMissing": false,
-                                "frequency": 22.0
-                            },
                             {
                                 "label": "Domestic",
                                 "value": "0",
                                 "isMissing": false,
                                 "frequency": 52.0
+                            },
+                            {
+                                "label": "Foreign",
+                                "value": "1",
+                                "isMissing": false,
+                                "frequency": 22.0
                             }
                         ]
                     }
                 ]
             }
         ],
-        "varGroups": [
-        ]
+        "varGroups": []
+    },
+    {
+        "id": 8,
+        "persistentId": "",
+        "filename": "README.md",
+        "contentType": "text/markdown",
+        "friendlyType": "Markdown Text",
+        "filesize": 28,
+        "description": "",
+        "storageIdentifier": "local://196d9f15664-1d4bb4e96a97",
+        "rootDataFileId": -1,
+        "md5": "a2e484d07ee5590cc32182dc2c6ccc83",
+        "checksum": {
+            "type": "MD5",
+            "value": "a2e484d07ee5590cc32182dc2c6ccc83"
+        },
+        "tabularData": false,
+        "creationDate": "2025-05-16",
+        "publicationDate": "2025-05-16",
+        "fileAccessRequest": true,
+        "restricted": false,
+        "fileMetadataId": 2,
+        "varGroups": []
     }
 ]
