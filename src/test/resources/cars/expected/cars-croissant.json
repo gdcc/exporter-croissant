@@ -124,6 +124,9 @@
                         "@id": "11",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "make"
                         }
                     }
                 },
@@ -136,6 +139,9 @@
                         "@id": "5",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "price"
                         }
                     }
                 },
@@ -148,6 +154,9 @@
                         "@id": "6",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "mpg"
                         }
                     }
                 },
@@ -160,6 +169,9 @@
                         "@id": "4",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "rep78"
                         }
                     }
                 },
@@ -172,6 +184,9 @@
                         "@id": "7",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "headroom"
                         }
                     }
                 },
@@ -184,6 +199,9 @@
                         "@id": "9",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "trunk"
                         }
                     }
                 },
@@ -196,6 +214,9 @@
                         "@id": "10",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "weight"
                         }
                     }
                 },
@@ -208,6 +229,9 @@
                         "@id": "3",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "length"
                         }
                     }
                 },
@@ -220,6 +244,9 @@
                         "@id": "2",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "turn"
                         }
                     }
                 },
@@ -232,6 +259,9 @@
                         "@id": "1",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "displacement"
                         }
                     }
                 },
@@ -244,6 +274,9 @@
                         "@id": "8",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "gear_ratio"
                         }
                     }
                 },
@@ -256,6 +289,9 @@
                         "@id": "12",
                         "fileObject": {
                             "@id": "data/stata13-auto.dta"
+                        },
+                        "extract": {
+                            "column": "foreign"
                         }
                     }
                 }

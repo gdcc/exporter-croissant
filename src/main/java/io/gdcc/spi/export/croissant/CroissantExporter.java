@@ -322,7 +322,13 @@ public class CroissantExporter implements Exporter {
                                                         .add(
                                                                 "fileObject",
                                                                 Json.createObjectBuilder()
-                                                                        .add("@id", fileId))));
+                                                                        .add("@id", fileId))
+                                                        .add(
+                                                                "extract",
+                                                                Json.createObjectBuilder()
+                                                                        .add(
+                                                                                "column",
+                                                                                variableName))));
                     }
                     recordSetContent.add("field", fieldSetArray);
                     recordSet.add(recordSetContent);

@@ -1,6 +1,7 @@
 0.1.5
 =====
 
+- Include "extract column" object per field, suggest testing with https://huggingface.co/spaces/JoaquinVanschoren/croissant-checker
 - Upgrade to mlcroissant 1.0.17 in validation script. See https://github.com/gdcc/exporter-croissant/pull/15
 
 0.1.4
