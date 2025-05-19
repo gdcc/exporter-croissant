@@ -1,3 +1,8 @@
+0.1.5
+=====
+
+- Upgrade to mlcroissant 1.0.17 in validation script
+
 0.1.4
 =====
 
