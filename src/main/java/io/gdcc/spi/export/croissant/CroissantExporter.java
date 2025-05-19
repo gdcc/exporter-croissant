@@ -16,8 +16,10 @@ import jakarta.ws.rs.core.MediaType;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import org.apache.commons.text.StringEscapeUtils;
 
 /** https://github.com/mlcommons/croissant */
@@ -190,10 +192,22 @@ public class CroissantExporter implements Exporter {
 
             JsonArray oreFiles = describes.getJsonArray("ore:aggregates");
 
+            // Create a map so that later we can use the storageIdentifier to lookup
+            // the position of the file in the array of files in the datasetORE format.
+            // We don't use checksum because it's possible for a dataset to have the
+            // same checksum for multiple files.
+            Map<String, Integer> storageIdentifierToPositionInOre = new HashMap<>();
+            for (int i = 0; i < oreFiles.size(); i++) {
+                JsonObject aggregate = oreFiles.getJsonObject(i);
+                String storageIdentifier = aggregate.getString("dvcore:storageIdentifier", null);
+                if (storageIdentifier != null) {
+                    storageIdentifierToPositionInOre.put(storageIdentifier, i);
+                }
+            }
+
             JsonArrayBuilder distribution = Json.createArrayBuilder();
             JsonArrayBuilder recordSet = Json.createArrayBuilder();
             JsonArray datasetFileDetails = dataProvider.getDatasetFileDetails();
-            int fileCounter = 0;
             for (JsonValue jsonValue : datasetFileDetails) {
 
                 JsonObjectBuilder recordSetContent = Json.createObjectBuilder();
@@ -234,7 +248,10 @@ public class CroissantExporter implements Exporter {
                 // Out of the box the checksum type will be md5
                 String checksumType = checksum.getString("type").toLowerCase();
                 String checksumValue = checksum.getString("value");
-                String contentUrl = oreFiles.getJsonObject(fileCounter).getString("schema:sameAs");
+                String storageIdentifier = fileDetails.getString("storageIdentifier");
+                int positionInOre = storageIdentifierToPositionInOre.get(storageIdentifier);
+                String contentUrl =
+                        oreFiles.getJsonObject(positionInOre).getString("schema:sameAs");
                 String description =
                         StringEscapeUtils.escapeHtml4(fileDetails.getString("description", ""));
                 /**
@@ -250,7 +267,7 @@ public class CroissantExporter implements Exporter {
                 String fileId = filename;
                 // We don't escape directory label because many characters aren't allowed anyway
                 String directoryLabel =
-                        oreFiles.getJsonObject(fileCounter)
+                        oreFiles.getJsonObject(positionInOre)
                                 .getString("dvcore:directoryLabel", null);
                 if (directoryLabel != null) {
                     fileId = directoryLabel + "/" + filename;
@@ -334,7 +351,6 @@ public class CroissantExporter implements Exporter {
                     recordSet.add(recordSetContent);
                     fileIndex++;
                 }
-                fileCounter++;
             }
 
             JsonArray citation = datasetSchemaDotOrg.getJsonArray("citation");

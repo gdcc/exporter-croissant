@@ -1,6 +1,7 @@
 0.1.5
 =====
 
+- Avoid file mismatches by matching on storageIdentifier rather than relying on order in array. See https://github.com/gdcc/exporter-croissant/pull/17
 - Include "extract column" object per field, suggest testing with https://huggingface.co/spaces/JoaquinVanschoren/croissant-checker . See https://github.com/gdcc/exporter-croissant/pull/16
 - Upgrade to mlcroissant 1.0.17 in validation script. See https://github.com/gdcc/exporter-croissant/pull/15
 

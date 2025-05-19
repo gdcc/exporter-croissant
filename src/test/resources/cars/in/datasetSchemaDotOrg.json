@@ -1,8 +1,8 @@
 {
     "@context": "http://schema.org",
     "@type": "Dataset",
-    "@id": "https://doi.org/10.5072/FK2/6ZUDGC",
-    "identifier": "https://doi.org/10.5072/FK2/6ZUDGC",
+    "@id": "https://doi.org/10.5072/FK2/CY7BWA",
+    "identifier": "https://doi.org/10.5072/FK2/CY7BWA",
     "name": "Cars",
     "creator": [
         {
@@ -28,8 +28,8 @@
             "name": "Durbin, Philip"
         }
     ],
-    "datePublished": "2024-03-20",
-    "dateModified": "2024-03-20",
+    "datePublished": "2025-05-16",
+    "dateModified": "2025-05-16",
     "version": "1",
     "description": "This dataset is about cars.",
     "keywords": [
@@ -56,7 +56,7 @@
             "encodingFormat": "text/x-python",
             "contentSize": 15,
             "description": "",
-            "contentUrl": "http://localhost:8080/api/access/datafile/4"
+            "contentUrl": "http://localhost:8080/api/access/datafile/7"
         },
         {
             "@type": "DataDownload",
@@ -64,7 +64,7 @@
             "encodingFormat": "text/tab-separated-values",
             "contentSize": 4026,
             "description": "",
-            "contentUrl": "http://localhost:8080/api/access/datafile/6"
+            "contentUrl": "http://localhost:8080/api/access/datafile/9"
         },
         {
             "@type": "DataDownload",
@@ -72,7 +72,7 @@
             "encodingFormat": "text/markdown",
             "contentSize": 28,
             "description": "",
-            "contentUrl": "http://localhost:8080/api/access/datafile/5"
+            "contentUrl": "http://localhost:8080/api/access/datafile/8"
         }
     ]
 }
