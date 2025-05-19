@@ -107,6 +107,8 @@ In short, we are trusting the output of `mlcroissant validate --jsonld` over the
 
 For additional validation you can use https://search.google.com/test/rich-results and https://validator.schema.org which are linked from https://developers.google.com/search/docs/appearance/structured-data
 
+Finally, there is a tool at https://huggingface.co/spaces/JoaquinVanschoren/croissant-checker that is used for datasets submitted to the NeurIPS conference.
+
 [mlcroissant]: https://pypi.org/project/mlcroissant/
 
 Note that https://validator.schema.org cannot be used for validation because of the Croissant-specific extensions the spec uses. You should expect to see errors like "http://mlcommons.org/croissant/FileObject is not a known valid target type for the distribution property".
