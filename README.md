@@ -21,27 +21,6 @@ Please note: the Croissant exporter works best with Dataverse 6.2 and higher (wh
 
 See [CHANGELOG.md](CHANGELOG.md).
 
-## Known issues
-
-### The "version" field triggers a validation warning.
-
-For the "version" field, we are providing normal, Dataverse-style versions such as "1.0" and "2.1". This triggers a warning from the Croissant validator, but we are working with the Croissant spec authors to correct this in the following issues:
-
-- 1.0 as a string should be a valid version for a dataset: https://github.com/mlcommons/croissant/issues/609
-- add flag to validator to ignore certain warnings: https://github.com/mlcommons/croissant/issues/643
-
-The [versioning section][] of Croissant spec treats any string as valid but recommends MAJOR.MINOR.PATCH (Semantic Versioning). However, values like "1.0.0" are unusable when provided to both the Datavese API and UI:
-
-- API: If you try to pass "1.0.0" to the API like https://dataverse.harvard.edu/api/datasets/:persistentId/versions/1.0.0?persistentId=doi:10.7910/DVN/TJCLKP you will get an error: "Illegal version identifier '1.0.0'".
-
-- UI: If you try to pass "1.0.0" to a dataset like https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TJCLKP&version=1.0.0 and the dataset has multiple versions, you will be directed to the latest version (4.0 as of this writing), rather version 1.0 as you expect.
-
-[versioning section]: https://mlcommons.github.io/croissant/docs/croissant-spec.html#dataset-versioningcheckpoints
-
-For the reasons above, we are providing MAJOR.MINOR (e.g. "1.0") as the version.
-
-We are using a string type for the "version" field in case we ever want to change Dataverse in the future to support MAJOR.MINOR.PATCH versions.
-
 ## Open questions
 
 Croissant is a new format and there are a number of open questions about it. (Developers may find additional open question in the code flagged with "TODO" or similar.)
@@ -88,8 +67,6 @@ mvn test
 ```
 
 ### To validate
-
-Note: We are aware of warnings for the "version" field. See above.
 
 ```
 ./validate.sh
