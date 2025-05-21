@@ -81,7 +81,7 @@
     ],
     "license": "http://creativecommons.org/publicdomain/zero/1.0",
     "datePublished": "2024-05-01",
-    "dateModified": "2024-05-01",
+    "dateModified": "2025-05-21",
     "includedInDataCatalog": {
         "@type": "DataCatalog",
         "name": "Root",
@@ -91,7 +91,7 @@
         "@type": "Organization",
         "name": "Root"
     },
-    "version": "1.0",
+    "version": "3.0",
     "citeAs": "@data{FK2/VQTYHD_2024,author = {Durbin, Philip and IQSS},publisher = {Root},title = {Max Schema.org},year = {2024},url = {https://doi.org/10.5072/FK2/VQTYHD}}",
     "funder": [
         {
@@ -121,6 +121,16 @@
     "distribution": [
         {
             "@type": "cr:FileObject",
+            "@id": "data.tsv",
+            "name": "data.tsv",
+            "encodingFormat": "text/tab-separated-values",
+            "md5": "3663d6a436ac00f5541a7336d6fa18c9",
+            "contentSize": "33",
+            "description": "",
+            "contentUrl": "https://beta.dataverse.org/api/access/datafile/26646?format=original"
+        },
+        {
+            "@type": "cr:FileObject",
             "@id": "doc/README.md",
             "name": "README.md",
             "encodingFormat": "text/markdown",
@@ -128,6 +138,58 @@
             "contentSize": "34",
             "description": "Additional documentation.",
             "contentUrl": "https://beta.dataverse.org/api/access/datafile/26148"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "name": "foo",
+                    "description": "foo",
+                    "dataType": "sc:Text",
+                    "source": {
+                        "@id": "1287",
+                        "fileObject": {
+                            "@id": "data.tsv"
+                        },
+                        "extract": {
+                            "column": "foo"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "name": "bar",
+                    "description": "bar",
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "@id": "1285",
+                        "fileObject": {
+                            "@id": "data.tsv"
+                        },
+                        "extract": {
+                            "column": "bar"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "name": "baz",
+                    "description": "baz",
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "@id": "1286",
+                        "fileObject": {
+                            "@id": "data.tsv"
+                        },
+                        "extract": {
+                            "column": "baz"
+                        }
+                    }
+                }
+            ]
         }
     ]
 }

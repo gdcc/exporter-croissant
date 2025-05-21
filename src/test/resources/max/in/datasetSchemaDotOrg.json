@@ -51,8 +51,8 @@
     }
   ],
   "datePublished": "2024-05-01",
-  "dateModified": "2024-05-01",
-  "version": "1",
+  "dateModified": "2025-05-21",
+  "version": "3",
   "description": "Exercising fields used by `schema.org` exporter.",
   "keywords": [
     "Social Sciences",
@@ -100,6 +100,13 @@
     "Cambridge, MA, United States, Harvard Square"
   ],
   "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "data.tab",
+      "encodingFormat": "text/tab-separated-values",
+      "contentSize": 27,
+      "contentUrl": "https://beta.dataverse.org/api/access/datafile/26646"
+    },
     {
       "@type": "DataDownload",
       "name": "README.md",

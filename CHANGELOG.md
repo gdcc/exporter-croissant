@@ -3,6 +3,7 @@
 
 - Avoid file mismatches by matching on storageIdentifier rather than relying on order in array. See https://github.com/gdcc/exporter-croissant/pull/17
 - Include "extract column" object per field, suggest testing with https://huggingface.co/spaces/JoaquinVanschoren/croissant-checker . See https://github.com/gdcc/exporter-croissant/pull/16
+- Replace "text/tsv" (invalid) with "text/tab-separated-values" (valid). See https://github.com/gdcc/exporter-croissant/pull/18
 - Upgrade to mlcroissant 1.0.17 in validation script. See https://github.com/gdcc/exporter-croissant/pull/15
 
 0.1.4

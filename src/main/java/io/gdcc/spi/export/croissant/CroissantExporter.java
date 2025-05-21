@@ -228,7 +228,22 @@ public class CroissantExporter implements Exporter {
                 if (filename == null) {
                     filename = StringEscapeUtils.escapeHtml4(fileDetails.getString("filename"));
                 }
-                String fileFormat = fileDetails.getString("originalFileFormat", null);
+                String fileFormat = null;
+                // Use the original file format, if available, since that's where the
+                // contentUrl will point.
+                String originalFileFormat = fileDetails.getString("originalFileFormat", null);
+                if (originalFileFormat != null) {
+                    if ("text/tsv".equals(originalFileFormat)) {
+                        // "text/tsv" is an internal format used by Dataverse while
+                        // "text/tab-separated-values" is the official IANA format
+                        // that we present to the outside world
+                        // See https://github.com/IQSS/dataverse/issues/11505 and
+                        // https://www.iana.org/assignments/media-types/media-types.xhtml
+                        fileFormat = "text/tab-separated-values";
+                    } else {
+                        fileFormat = originalFileFormat;
+                    }
+                }
                 if (fileFormat == null) {
                     fileFormat = fileDetails.getString("contentType");
                 }
