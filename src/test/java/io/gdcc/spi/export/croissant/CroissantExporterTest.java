@@ -36,6 +36,8 @@ public class CroissantExporterTest {
     static ExportDataProvider dataProviderMax;
     static OutputStream outputStreamCars;
     static ExportDataProvider dataProviderCars;
+    static OutputStream outputStreamRestricted;
+    static ExportDataProvider dataProviderRestricted;
     static OutputStream outputStreamJunk;
     static ExportDataProvider dataProviderJunk;
     static OutputStream outputStreamDraft;
@@ -220,6 +222,67 @@ public class CroissantExporterTest {
                         try {
                             return Files.readString(
                                     Paths.get("src/test/resources/cars/in/dataCiteXml.xml"),
+                                    StandardCharsets.UTF_8);
+                        } catch (IOException ex) {
+                            return null;
+                        }
+                    }
+                };
+
+        outputStreamRestricted = new ByteArrayOutputStream();
+        dataProviderRestricted =
+                new ExportDataProvider() {
+                    @Override
+                    public JsonObject getDatasetJson() {
+                        String pathToJsonFile = "src/test/resources/restricted/in/datasetJson.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readObject();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public JsonObject getDatasetORE() {
+                        String pathToJsonFile = "src/test/resources/restricted/in/datasetORE.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readObject();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public JsonArray getDatasetFileDetails() {
+                        String pathToJsonFile =
+                                "src/test/resources/restricted/in/datasetFileDetails.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readArray();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public JsonObject getDatasetSchemaDotOrg() {
+                        String pathToJsonFile =
+                                "src/test/resources/restricted/in/datasetSchemaDotOrg.json";
+                        try (JsonReader jsonReader =
+                                Json.createReader(new FileReader(pathToJsonFile))) {
+                            return jsonReader.readObject();
+                        } catch (FileNotFoundException ex) {
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    public String getDataCiteXml() {
+                        try {
+                            return Files.readString(
+                                    Paths.get("src/test/resources/restricted/in/dataCiteXml.xml"),
                                     StandardCharsets.UTF_8);
                         } catch (IOException ex) {
                             return null;
@@ -442,6 +505,22 @@ public class CroissantExporterTest {
                         StandardCharsets.UTF_8);
         JSONAssert.assertEquals(expected, actual, true);
         assertEquals(prettyPrint(expected), prettyPrint(outputStreamCars.toString()));
+    }
+
+    /**
+     * Same as the cars data but the stata13-auto.dta file is restricted.
+     */
+    @Test
+    public void testExportDatasetRestricted() throws Exception {
+        exporter.exportDataset(dataProviderRestricted, outputStreamRestricted);
+        String actual = outputStreamRestricted.toString();
+        writeCroissantFile(actual, "restricted");
+        String expected =
+                Files.readString(
+                        Paths.get("src/test/resources/restricted/expected/restricted-croissant.json"),
+                        StandardCharsets.UTF_8);
+        JSONAssert.assertEquals(expected, actual, true);
+        assertEquals(prettyPrint(expected), prettyPrint(outputStreamRestricted.toString()));
     }
 
     @Test
