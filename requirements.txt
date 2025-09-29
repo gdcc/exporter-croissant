@@ -1,1 +1,2 @@
 mlcroissant==1.0.17
+pyDataverse==0.3.5
