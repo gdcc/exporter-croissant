@@ -1,7 +1,7 @@
 0.1.6
 =====
 
-- Do no expose variable name, variable description, and variable type for restricted files. See https://github.com/gdcc/exporter-croissant/pull/20
+- Do not expose variable name, variable description, and variable type for restricted files. See https://github.com/gdcc/exporter-croissant/pull/20
 
 0.1.5
 =====
