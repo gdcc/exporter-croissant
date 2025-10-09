@@ -298,6 +298,12 @@ public class CroissantExporter implements Exporter {
                                 .add("contentSize", fileSizeInBytes)
                                 .add("description", description)
                                 .add("contentUrl", contentUrl));
+                boolean fileRestricted = fileDetails.getBoolean("restricted");
+                if (fileRestricted) {
+                    // Don't add the recordSet items for restricted files.
+                    // Go on to the next file.
+                    continue;
+                }
                 int fileIndex = 0;
                 JsonArray dataTables = fileDetails.getJsonArray("dataTables");
                 if (dataTables == null) {
