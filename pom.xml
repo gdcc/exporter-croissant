@@ -3,9 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>io.gdcc.export</groupId>
+    <groupId>io.gdcc</groupId>
     <artifactId>parent</artifactId>
-    <version>2.0.0-M2</version>
+    <version>0.12.4</version>
   </parent>
 
   <groupId>io.gdcc.export</groupId>
@@ -32,41 +32,61 @@
     </developer>
   </developers>
 
-  <scm>
-    <connection>scm:git:https://github.com/gdcc/exporter-croissant.git</connection>
-    <developerConnection>scm:git:git@github.com:gdcc/exporter-croissant.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>https://github.com/gdcc/exporter-croissant</url>
-  </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <pomchecker-maven-plugin.version>1.7.0</pomchecker-maven-plugin.version>
+    <dataverse.spi.version>2.0.0</dataverse.spi.version>
+    <google.auto.service.version>1.1.1</google.auto.service.version>
+    <jakarta.json-api.version>2.1.0</jakarta.json-api.version>
+    <eclipse.parsson.version>1.1.6</eclipse.parsson.version>
+    <jakarta.ws.rs.version>3.1.0</jakarta.ws.rs.version>
+    <apache.commons-text.version>1.13.0</apache.commons-text.version>
+    <junit.jupiter.version>5.10.3</junit.jupiter.version>
+    <skyscreamer.jsonassert.version>1.5.1</skyscreamer.jsonassert.version>
   </properties>
 
   <dependencies>
     <dependency>
+      <groupId>io.gdcc</groupId>
+      <artifactId>dataverse-spi</artifactId>
+      <version>${dataverse.spi.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.service</groupId>
+      <artifactId>auto-service</artifactId>
+      <version>${google.auto.service.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.json</groupId>
+      <artifactId>jakarta.json-api</artifactId>
+      <version>${jakarta.json-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>${jakarta.ws.rs.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.parsson</groupId>
+      <artifactId>parsson</artifactId>
+      <version>${eclipse.parsson.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-text</artifactId>
-      <version>1.13.0</version>
+      <version>${apache.commons-text.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version>
     </dependency>
     <dependency>
       <groupId>org.skyscreamer</groupId>
       <artifactId>jsonassert</artifactId>
-      <version>1.5.1</version>
+      <version>${skyscreamer.jsonassert.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -78,22 +98,6 @@
         <configuration>
           <release>17</release>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.13</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.kordamp.maven</groupId>
-        <artifactId>pomchecker-maven-plugin</artifactId>
-        <version>${pomchecker-maven-plugin.version}</version>
       </plugin>
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
@@ -125,90 +129,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.4</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-                <phase>verify</phase>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.6.3</version>
-            <configuration>
-              <source>17</source>
-              <detectJavaApiLink>false</detectJavaApiLink>
-            </configuration>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.3.0</version>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>flatten-maven-plugin</artifactId>
-            <version>1.6.0</version>
-            <configuration>
-              <updatePomFile>true</updatePomFile>
-              <flattenMode>oss</flattenMode>
-              <pomElements>
-                <distributionManagement>remove</distributionManagement>
-                <repositories>remove</repositories>
-              </pomElements>
-            </configuration>
-            <executions>
-              <!-- enable flattening -->
-              <execution>
-                <id>flatten</id>
-                <goals>
-                  <goal>flatten</goal>
-                </goals>
-                <phase>process-resources</phase>
-              </execution>
-              <!-- ensure proper cleanup -->
-              <execution>
-                <id>flatten.clean</id>
-                <goals>
-                  <goal>clean</goal>
-                </goals>
-                <phase>clean</phase>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
 </project>
