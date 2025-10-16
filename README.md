@@ -97,7 +97,7 @@ As a convenience, you can run `mvn test` and then `update-expected.sh` after mak
 ### To format code
 
 ```
-mvn spotless::apply
+mvn spotless:apply
 ```
 
 ## To check the pom.xml file

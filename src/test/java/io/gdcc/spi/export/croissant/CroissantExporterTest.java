@@ -507,9 +507,7 @@ public class CroissantExporterTest {
         assertEquals(prettyPrint(expected), prettyPrint(outputStreamCars.toString()));
     }
 
-    /**
-     * Same as the cars data but the stata13-auto.dta file is restricted.
-     */
+    /** Same as the cars data but the stata13-auto.dta file is restricted. */
     @Test
     public void testExportDatasetRestricted() throws Exception {
         exporter.exportDataset(dataProviderRestricted, outputStreamRestricted);
@@ -517,7 +515,8 @@ public class CroissantExporterTest {
         writeCroissantFile(actual, "restricted");
         String expected =
                 Files.readString(
-                        Paths.get("src/test/resources/restricted/expected/restricted-croissant.json"),
+                        Paths.get(
+                                "src/test/resources/restricted/expected/restricted-croissant.json"),
                         StandardCharsets.UTF_8);
         JSONAssert.assertEquals(expected, actual, true);
         assertEquals(prettyPrint(expected), prettyPrint(outputStreamRestricted.toString()));
