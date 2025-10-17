@@ -32,6 +32,14 @@
     </developer>
   </developers>
 
+  <scm>
+    <!-- Override "croissant" with name of git repo -->
+    <connection>scm:git:https://github.com/gdcc/exporter-croissant.git</connection>
+    <developerConnection>scm:git:git@github.com:gdcc/exporter-croissant.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/gdcc/exporter-croissant</url>
+  </scm>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
