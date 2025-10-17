@@ -10,7 +10,7 @@
 
   <groupId>io.gdcc.export</groupId>
   <artifactId>croissant</artifactId>
-  <version>0.1.6-SNAPSHOT</version>
+  <version>0.1.6</version>
   <packaging>jar</packaging>
   <name>Croissant Exporter for Dataverse</name>
   <description>Croissant is a high-level format for machine learning datasets.</description>
@@ -36,7 +36,7 @@
     <!-- Override "croissant" with name of git repo -->
     <connection>scm:git:https://github.com/gdcc/exporter-croissant.git</connection>
     <developerConnection>scm:git:git@github.com:gdcc/exporter-croissant.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>croissant-0.1.6</tag>
     <url>https://github.com/gdcc/exporter-croissant</url>
   </scm>
 
