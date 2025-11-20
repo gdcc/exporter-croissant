@@ -1,10 +1,8 @@
 target
 venv
 .flattened-pom.xml
-src/test/resources/minimal/out/croissant.json
-src/test/resources/max/out/croissant.json
-src/test/resources/cars/out/croissant.json
-src/test/resources/draft/out/croissant.json
+# these "out" files are generated when running tests
+src/test/resources/*/out/croissant.json
 release.properties
 pom.xml.releaseBackup
 .vscode
