@@ -1,3 +1,9 @@
+0.1.7
+=====
+
+- add samplingRate to @context. See https://github.com/gdcc/exporter-croissant/pull/29
+- Upgrade to mlcroissant==1.0.22. See https://github.com/gdcc/exporter-croissant/pull/29
+
 0.1.6
 =====
 
