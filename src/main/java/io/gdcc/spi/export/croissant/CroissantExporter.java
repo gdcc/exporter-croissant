@@ -123,6 +123,7 @@ public class CroissantExporter implements Exporter {
                     "regex": "cr:regex",
                     "repeated": "cr:repeated",
                     "replace": "cr:replace",
+                    "samplingRate": "cr:samplingRate",
                     "sc": "https://schema.org/",
                     "separator": "cr:separator",
                     "source": "cr:source",
