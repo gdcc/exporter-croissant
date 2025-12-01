@@ -128,8 +128,7 @@ public class CroissantExporter implements Exporter {
                     "separator": "cr:separator",
                     "source": "cr:source",
                     "subField": "cr:subField",
-                    "transform": "cr:transform",
-                    "wd": "https://www.wikidata.org/wiki/"
+                    "transform": "cr:transform"
                 }
             }
             """;
