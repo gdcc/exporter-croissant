@@ -332,6 +332,8 @@ public class CroissantExporter implements Exporter {
                                 dataVariableObject.getString("variableFormatType");
                         String variableIntervalType =
                                 dataVariableObject.getString("variableIntervalType");
+                        JsonObject variableSummaryStatistics =
+                                dataVariableObject.getJsonObject("summaryStatistics");
                         String dataType = null;
                         /**
                          * There are only two variableFormatType types on the Dataverse side:
@@ -346,6 +348,235 @@ public class CroissantExporter implements Exporter {
                                 break;
                             default:
                                 break;
+                        }
+                        JsonArrayBuilder annotations = Json.createArrayBuilder();
+                        String string =
+                                """
+                            "invd": "0.0", ???
+                            "min": "1760.0", minValue
+                            "vald": "74.0", ???
+                            "max": "4840.0", maxValue
+                            "stdev": "777.1935671373664", ???
+                            "mean": "3019.459459459459", ???
+                            "mode": ".", ???
+                            "medn": "3190.0" median
+                                """;
+                        if (variableSummaryStatistics != null) {
+                            // Same order as upstream: MEAN, MEDN, MODE, MIN, MAX, STDEV, VALD, INVD
+                            annotations
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    // We're aware that an @id of
+                                                    // "data/stata13-auto.dta/price/mean" looks nice
+                                                    // but won't validate if there's whitespace.
+                                                    // We've asked for guidance here:
+                                                    // https://github.com/mlcommons/croissant/issues/639#issuecomment-3792179493
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    // The spec gives "mean" as an
+                                                                    // example but we'll use
+                                                                    // ArithmeticMean from
+                                                                    // https://rdf-vocabulary.ddialliance.org/ddi-cv/SummaryStatisticType/2.1.2/SummaryStatisticType.html
+                                                                    + "/ArithmeticMean")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "mean"))
+                                                    /**
+                                                     * The spec offers a shorter way to define
+                                                     * dataType but it only works if there is a
+                                                     * Schema.org property for it for
+                                                     * human-readability. Here's the example they
+                                                     * show:
+                                                     *
+                                                     * <p>{ "@id": "person/age/max", "value": 75,
+                                                     * "dataType": "ddi-stats:8321e79",
+                                                     * "equivalentProperty": "sc:maxValue" }
+                                                     *
+                                                     * <p>Of our statistics, only median, minValue,
+                                                     * and maxValue exist in schema.org (see
+                                                     * https://schema.org/maxValue for example) so
+                                                     * we define all statistics the longer way for
+                                                     * consistency.
+                                                     */
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add(
+                                                                            "termCode",
+                                                                            "ArithmeticMean")
+                                                                    // The spec gives an example
+                                                                    // with "Arithmetic Mean" but
+                                                                    // we'll use "Arithmetic mean"
+                                                                    // from
+                                                                    // https://rdf-vocabulary.ddialliance.org/ddi-cv/SummaryStatisticType/2.1.2/SummaryStatisticType.html
+                                                                    .add("name", "Arithmetic mean")
+                                                                    .add("@id", "ddi-stats:7975ed0")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/Median")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "medn"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add("termCode", "Median")
+                                                                    .add("name", "Median")
+                                                                    .add("@id", "ddi-stats:66851a3")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/Mode")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "mode"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add("termCode", "Mode")
+                                                                    .add("name", "Mode")
+                                                                    .add("@id", "ddi-stats:650be61")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/Minimum")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "min"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add("termCode", "Minimum")
+                                                                    .add("name", "Minimum")
+                                                                    .add("@id", "ddi-stats:a1d0ec6")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/Maximum")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "max"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add("termCode", "Maximum")
+                                                                    .add("name", "Maximum")
+                                                                    .add("@id", "ddi-stats:8321e79")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/StandardDeviation")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "stdev"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add(
+                                                                            "termCode",
+                                                                            "StandardDeviation")
+                                                                    .add(
+                                                                            "name",
+                                                                            "Standard deviation")
+                                                                    .add("@id", "ddi-stats:690ab50")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/ValidCases")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "vald"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add("termCode", "ValidCases")
+                                                                    .add("name", "Valid cases")
+                                                                    .add("@id", "ddi-stats:c646dd8")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")))
+                                    .add(
+                                            Json.createObjectBuilder()
+                                                    .add(
+                                                            "@id",
+                                                            fileId.toString()
+                                                                    + "/"
+                                                                    + variableName
+                                                                    + "/InvalidCases")
+                                                    .add(
+                                                            "value",
+                                                            variableSummaryStatistics.getString(
+                                                                    "invd"))
+                                                    .add(
+                                                            "dataType",
+                                                            Json.createObjectBuilder()
+                                                                    .add("@type", "sc:DefinedTerm")
+                                                                    .add("termCode", "InvalidCases")
+                                                                    .add("name", "Invalid cases")
+                                                                    .add("@id", "ddi-stats:6459c62")
+                                                                    .add(
+                                                                            "inDefinedTermSet",
+                                                                            "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/")));
                         }
                         fieldSetArray.add(
                                 Json.createObjectBuilder()
@@ -366,7 +597,8 @@ public class CroissantExporter implements Exporter {
                                                                 Json.createObjectBuilder()
                                                                         .add(
                                                                                 "column",
-                                                                                variableName))));
+                                                                                variableName)))
+                                        .add("annotation", annotations));
                     }
                     recordSetContent.add("field", fieldSetArray);
                     recordSet.add(recordSetContent);
