@@ -16,6 +16,7 @@
             "@type": "@vocab"
         },
         "dct": "http://purl.org/dc/terms/",
+        "ddi-stats": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/",
         "examples": {
             "@id": "cr:examples",
             "@type": "@json"
@@ -143,6 +144,12 @@
     "recordSet": [
         {
             "@type": "cr:RecordSet",
+            "cr:annotation": {
+                "@type": "cr:Field",
+                "name": "data.tsv/count",
+                "value": 3,
+                "dataType": "http://www.wikidata.org/entity/Q4049983"
+            },
             "field": [
                 {
                     "@type": "cr:Field",
@@ -172,7 +179,97 @@
                         "extract": {
                             "column": "bar"
                         }
-                    }
+                    },
+                    "annotation": [
+                        {
+                            "@id": "data.tsv/bar/ArithmeticMean",
+                            "value": "2.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "ArithmeticMean",
+                                "name": "Arithmetic mean",
+                                "@id": "ddi-stats:7975ed0",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/Median",
+                            "value": "2.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Median",
+                                "name": "Median",
+                                "@id": "ddi-stats:66851a3",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/Mode",
+                            "value": ".",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Mode",
+                                "name": "Mode",
+                                "@id": "ddi-stats:650be61",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/Minimum",
+                            "value": "1.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Minimum",
+                                "name": "Minimum",
+                                "@id": "ddi-stats:a1d0ec6",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/Maximum",
+                            "value": "3.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Maximum",
+                                "name": "Maximum",
+                                "@id": "ddi-stats:8321e79",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/StandardDeviation",
+                            "value": "1.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "StandardDeviation",
+                                "name": "Standard deviation",
+                                "@id": "ddi-stats:690ab50",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/ValidCases",
+                            "value": "3.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "ValidCases",
+                                "name": "Valid cases",
+                                "@id": "ddi-stats:c646dd8",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/bar/InvalidCases",
+                            "value": "0.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "InvalidCases",
+                                "name": "Invalid cases",
+                                "@id": "ddi-stats:6459c62",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        }
+                    ]
                 },
                 {
                     "@type": "cr:Field",
@@ -187,7 +284,97 @@
                         "extract": {
                             "column": "baz"
                         }
-                    }
+                    },
+                    "annotation": [
+                        {
+                            "@id": "data.tsv/baz/ArithmeticMean",
+                            "value": "20.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "ArithmeticMean",
+                                "name": "Arithmetic mean",
+                                "@id": "ddi-stats:7975ed0",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/Median",
+                            "value": "20.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Median",
+                                "name": "Median",
+                                "@id": "ddi-stats:66851a3",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/Mode",
+                            "value": ".",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Mode",
+                                "name": "Mode",
+                                "@id": "ddi-stats:650be61",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/Minimum",
+                            "value": "10.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Minimum",
+                                "name": "Minimum",
+                                "@id": "ddi-stats:a1d0ec6",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/Maximum",
+                            "value": "30.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "Maximum",
+                                "name": "Maximum",
+                                "@id": "ddi-stats:8321e79",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/StandardDeviation",
+                            "value": "10.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "StandardDeviation",
+                                "name": "Standard deviation",
+                                "@id": "ddi-stats:690ab50",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/ValidCases",
+                            "value": "3.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "ValidCases",
+                                "name": "Valid cases",
+                                "@id": "ddi-stats:c646dd8",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        },
+                        {
+                            "@id": "data.tsv/baz/InvalidCases",
+                            "value": "0.0",
+                            "dataType": {
+                                "@type": "sc:DefinedTerm",
+                                "termCode": "InvalidCases",
+                                "name": "Invalid cases",
+                                "@id": "ddi-stats:6459c62",
+                                "inDefinedTermSet": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/"
+                            }
+                        }
+                    ]
                 }
             ]
         }
