@@ -1,3 +1,5 @@
+# Note: This repo has been deprecated. The code was moved into the main Dataverse code base in https://github.com/IQSS/dataverse/pull/12130
+
 # Croissant Exporter for Dataverse
 
 [Croissant][] is a high-level format for machine learning datasets. See the [Croissant writeup] in the Dataverse guides for how this format is used in Dataverse and how to enable it.
