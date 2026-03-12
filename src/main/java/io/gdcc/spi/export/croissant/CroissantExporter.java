@@ -139,7 +139,7 @@ public class CroissantExporter implements Exporter {
             }
 
             job.add("@type", "sc:Dataset");
-            job.add("conformsTo", "http://mlcommons.org/croissant/1.0");
+            job.add("conformsTo", "http://mlcommons.org/croissant/1.1");
 
             JsonObject datasetJson = dataProvider.getDatasetJson();
 
